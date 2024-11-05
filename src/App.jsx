@@ -78,7 +78,7 @@ function App() {
     <>
       <Navbar />
       <main>
-        <h1>Memory Game in React</h1>
+        <h1>Memory Game</h1>
         <div className="container">
           {pieces.map((item, index) => (
             <div
