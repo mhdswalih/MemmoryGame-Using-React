@@ -32,7 +32,6 @@ body {
 }
 .logo{
   display: flex;
-  /* justify-content: start; */
   margin-bottom: 900px;
   margin-left: 50px;
   position: absolute;
