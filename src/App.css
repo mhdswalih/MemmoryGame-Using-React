@@ -1,12 +1,19 @@
+/* General Styling */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+body{
+  background-image: url('../img/freepik__fun-whimsical-elements-with-bright-colors-and-a-se__58012.jpeg');
+  /* background-repeat: no-repeat; */
+  background-size: contain;
+  /* background-color: orange; */
+}
 
 h1 {
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 2vw, 2rem); 
   color: #fff;
 }
 
@@ -17,41 +24,47 @@ h1 {
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 3vw, 3rem); 
 }
 
+/* Container Styling */
 .container {
   display: grid;
-  grid-template-columns: repeat(6, 150px);
-  grid-auto-rows: 150px;
-  gap: 20px;
+  grid-template-columns: repeat(6, 120px); 
+  grid-auto-rows: 120px; 
+  gap: 15px; 
   justify-content: center;
 }
 
-/* Adjusting grid layout for tablets */
+
+
+/* Tablets (1024px and below) */
 @media (max-width: 1024px) {
   .container {
-    grid-template-columns: repeat(4, 150px);
+    grid-template-columns: repeat(6, 100px);
+    grid-auto-rows: 100px;
+    gap: 12px;
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   }
 
   .game-completed {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   }
 }
 
-/* Adjusting grid layout for mobile devices */
+/* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
   .container {
-    grid-template-columns: repeat(3, 150px);
-    gap: 15px;
+    grid-template-columns: repeat(4, 90px); 
+    grid-auto-rows: 90px;
+    gap: 10px;
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 2.2vw, 1.6rem);
   }
 
   .game-completed {
@@ -59,11 +72,12 @@ h1 {
   }
 }
 
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
   .container {
-    grid-template-columns: repeat(2, 100px);
-    grid-auto-rows: 100px;
-    gap: 10px;
+    grid-template-columns: repeat(4, 70px); 
+    grid-auto-rows: 70px;
+    gap: 8px;
   }
 
   h1 {
@@ -75,10 +89,29 @@ h1 {
   }
 }
 
+/* Very Small Devices (360px and below) */
+@media (max-width: 360px) {
+  .container {
+    grid-template-columns: repeat(4, 60px); 
+    grid-auto-rows: 60px;
+    gap: 6px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+   
+  }
+
+  .game-completed {
+    font-size: 1.5rem;
+  }
+}
+
+/* Flip Card Styling */
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
-  width: 100%;
+  width: 100%; 
   height: 100%;
 }
 
@@ -103,23 +136,34 @@ h1 {
   backface-visibility: hidden;
   border-radius: 5px;
 }
-
 .flip-card-front {
-  background-color: #0c0b0b;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);  
+  border-radius: 10px;  
   color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
 }
 
+
 .flip-card-back {
-  background-color: rgb(34, 36, 39);
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);  
   color: white;
   transform: rotateY(180deg);
   display: grid;
   place-items: center;
-  font-size: 2rem;
+  font-size: clamp(3rem, 4vw, 2.5rem);
 }
 
+/* Font size adjustments for mobile devices */
 @media (max-width: 480px) {
   .flip-card-back {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .flip-card-back {
+    font-size: 1.8rem;
   }
 }
