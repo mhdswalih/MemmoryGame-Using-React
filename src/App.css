@@ -6,10 +6,15 @@
   text-align: center;
 }
 body{
-  background-image: url('../img/freepik__fun-whimsical-elements-with-bright-colors-and-a-se__58012.jpeg');
+  /* background-image: url('../img/24813.jpg'); */
+  background: linear-gradient(
+    to right,
+    rgba(135, 206, 235, 0.7), 
+    rgba(255, 255, 255, 0.9)  
+  );
   /* background-repeat: no-repeat; */
   background-size: contain;
-  /* background-color: orange; */
+
 }
 
 h1 {
